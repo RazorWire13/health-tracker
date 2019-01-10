@@ -23,6 +23,6 @@ public class FingerExercise extends AppCompatActivity {
 
     public void incrementDisplay(int number) {
         TextView displayIncrement = (TextView)findViewById(R.id.integer_display);
-        displayIncrement.setText("clicks: "+ number);
+        displayIncrement.setText(number);
     }
 }

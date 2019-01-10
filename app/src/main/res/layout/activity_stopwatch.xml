@@ -12,20 +12,21 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="44dp"
         android:layout_marginTop="24dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginEnd="19dp"
         android:text="[ Start ]"
+        android:textSize="30sp"
         app:layout_constraintEnd_toStartOf="@+id/btReset"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvTimer" />
 
     <TextView
         android:id="@+id/tvTimer"
-        android:layout_width="295dp"
-        android:layout_height="51dp"
-        android:layout_marginTop="184dp"
+        android:layout_width="323dp"
+        android:layout_height="102dp"
+        android:layout_marginTop="144dp"
         android:text="00:00:000"
         android:textAlignment="center"
-        android:textSize="30sp"
+        android:textSize="72sp"
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.505"
@@ -38,7 +39,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:text="[ Reset ]"
+        android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.879"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvTimer" />
 
