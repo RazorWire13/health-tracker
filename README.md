@@ -13,6 +13,26 @@ This activity can start/stop and reset a stopwatch to the millisecond
 This activity increments an integer by 1 for each time the button is clicked
 
 
+## Change Log
+1/8/2019
+- Set up basic file structure
+- Completed finger exerciser activity and basic layout for app.
+
+1/9/2019
+- Completed stopwatch method
+- Completed image carousel method
+- Separated each method into their own activities and connected by intents
+
+1/10/2019
+- Continued learning about notifications
+
+## Activity Screenshots
+- Finger Exerciser(/res/)
+
+- Stopwatch
+
+- Image Carousel
+
 ## Resources
 
 ### Finger Exerciser
