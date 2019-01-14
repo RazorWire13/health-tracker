@@ -13,16 +13,11 @@ public class FingerExercise extends AppCompatActivity {
         setContentView(R.layout.activity_finger_exercise);
     }
 
-    // Finger Exerciser
-    int intClick = 0;
-
+    // Finger Exerciser integer incrementer
     public void integerIncrement(View view) {
+        TextView displayIncrement = findViewById(R.id.integer_display);
+        int intClick = Integer.parseInt(displayIncrement.getText().toString());
         intClick++;
-        incrementDisplay(intClick);
-    }
-
-    public void incrementDisplay(int number) {
-        TextView displayIncrement = (TextView)findViewById(R.id.integer_display);
-        displayIncrement.setText(number);
+        displayIncrement.setText(String.valueOf(intClick));
     }
 }

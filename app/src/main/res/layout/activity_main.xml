@@ -8,10 +8,10 @@
 
     <com.synnapps.carouselview.CarouselView
         android:id="@+id/carouselView"
-        android:layout_width="297dp"
+        android:layout_width="0dp"
         android:layout_height="184dp"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="24dp"
         app:fillColor="#FFFFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
@@ -27,35 +27,46 @@
     <Button
         android:id="@+id/btFngrExrPage"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="60dp"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="24dp"
         android:onClick="goToFingerExercise"
         android:text="@string/finger_exercise"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/carouselView" />
 
     <Button
         android:id="@+id/btStopwatch"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="108dp"
-        android:layout_marginTop="36dp"
+        android:layout_height="61dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="32dp"
-        android:layout_marginBottom="28dp"
         android:onClick="goToStopwatch"
         android:text="Stopwatch"
         android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btFngrExrPage" />
+
+    <Button
+        android:id="@+id/btWaterBreak"
+        android:layout_width="wrap_content"
+        android:layout_height="64dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="32dp"
+        android:onClick="notifyWaterBreak"
+        android:text="User Notification "
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btFngrExrPage"
-        app:layout_constraintVertical_bias="0.0" />
-
+        app:layout_constraintTop_toBottomOf="@+id/btStopwatch" />
 
 </android.support.constraint.ConstraintLayout>

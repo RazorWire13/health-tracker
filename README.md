@@ -26,6 +26,9 @@ This activity increments an integer by 1 for each time the button is clicked
 1/10/2019
 - Continued learning about notifications
 
+1/13/2019
+- Added notification functionality
+
 ## Activity Screenshots
 - Finger Exerciser(/res/)
 
@@ -44,3 +47,9 @@ This activity increments an integer by 1 for each time the button is clicked
 
 ### Carousel
 * https://github.com/sayyam/carouselview
+
+### Notifications
+* https://gist.github.com/BrandonSmith/6679223
+* https://developer.android.com/training/notify-user/build-notification
+* https://stackoverflow.com/questions/9406523/android-want-app-to-perform-tasks-every-second
+

@@ -17,7 +17,13 @@
             </intent-filter>
         </activity>
         <activity android:name=".FingerExercise" />
-        <activity android:name=".Stopwatch"></activity>
+        <activity android:name=".Stopwatch" />
+
+        <receiver android:name=".NotificationReceiver" />
+        <receiver
+            android:name=".Notification"
+            android:enabled="true"
+            android:exported="true"></receiver>
     </application>
 
 </manifest>
