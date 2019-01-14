@@ -3,14 +3,17 @@ Health Tracker (Android Mobile)
 
 Health Tracker performs the following activities:
 
-'Image Carousel'
-This activity shifts from a set of images on the home activity
+`Image Carousel`
+* This activity shifts from a set of images on the home activity
 
-'Stopwatch'
-This activity can start/stop and reset a stopwatch to the millisecond
+`Stopwatch`
+* This activity can start/stop and reset a stopwatch to the millisecond
 
-'Finger Exerciser'
-This activity increments an integer by 1 for each time the button is clicked
+`Finger Exerciser`
+* This activity increments an integer by 1 for each time the button is clicked
+
+`Notifications`
+* Sends a notification to the user to take a water break when the button is clicked
 
 
 ## Change Log
