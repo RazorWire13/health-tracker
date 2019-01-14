@@ -30,11 +30,13 @@ This activity increments an integer by 1 for each time the button is clicked
 - Added notification functionality
 
 ## Activity Screenshots
-- Finger Exerciser(/res/)
+- Finger Exerciser(./screenshots/Screenshot_FingerExerciser.png)
 
-- Stopwatch
+- Stopwatch(./screenshots/Screenshot_Stopwatch.png)
 
-- Image Carousel
+- Image Carousel(./screenshots/Screenshot_MainActivity.png)
+
+- Notifications(./screenshots/Screenshot_Notifications.png)
 
 ## Resources
 
