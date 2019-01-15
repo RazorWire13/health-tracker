@@ -53,6 +53,12 @@ public class MainActivity extends AppCompatActivity {
         startActivity(stopwatchIntent);
     }
 
+    // Intent for Journal activity view
+    public void goToJournal(View view) {
+        Intent journalIntent = new Intent(this, ExerciseJournal.class);
+        startActivity(journalIntent);
+    }
+
     // Resourced from: stackoverflow.com/questions/9406523/android-want-app-to-perform-tasks-every-second
     public void notifyWaterBreak(View view) {
         Timer t = new Timer();

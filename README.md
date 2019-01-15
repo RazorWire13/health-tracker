@@ -29,6 +29,9 @@ This activity increments an integer by 1 for each time the button is clicked
 1/13/2019
 - Added notification functionality
 
+1/15/2019
+- Added exercise journal database and activity
+
 ## Activity Screenshots
 - Finger Exerciser(./screenshots/Screenshot_FingerExerciser.png)
 
@@ -54,4 +57,10 @@ This activity increments an integer by 1 for each time the button is clicked
 * https://gist.github.com/BrandonSmith/6679223
 * https://developer.android.com/training/notify-user/build-notification
 * https://stackoverflow.com/questions/9406523/android-want-app-to-perform-tasks-every-second
+
+### Room Database
+* https://medium.freecodecamp.org/room-sqlite-beginner-tutorial-2e725e47bfab
+
+### ListViews
+* http://www.vogella.com/tutorials/AndroidRecyclerView/article.html
 
