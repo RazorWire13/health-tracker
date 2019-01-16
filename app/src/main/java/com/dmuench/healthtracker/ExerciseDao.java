@@ -13,13 +13,19 @@ public interface ExerciseDao {
 
     @Insert
     void insertOneExercise (Exercises exercises);
+
     @Insert
     void insertMultipleExercises (List<Exercises> exerciseList);
-    @Query("SELECT * FROM Exercises WHERE exerciseId = :exerciseId")
 
-    Exercises fetchOneExercisebyExerciseId (long exerciseId);
+    @Query("SELECT * FROM exercises WHERE exerciseId = :exerciseId")
+    Exercises getExercise (long exerciseId);
+
+    @Query("SELECT * FROM exercises")
+    List<Exercises> getAll();
+
     @Update
     void updateExercises (Exercises exercises);
+
     @Delete
     void deleteExercise (Exercises exercises);
 }

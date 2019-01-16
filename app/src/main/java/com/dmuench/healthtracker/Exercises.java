@@ -2,11 +2,12 @@ package com.dmuench.healthtracker;
 
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;
-import android.support.annotation.NonNull;
+
+import java.util.Date;
 
 @Entity
 public class Exercises {
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true)
     private long exerciseId;
     private String exerciseTitle;
     private String exerciseQuantity;
@@ -20,7 +21,7 @@ public class Exercises {
         this.exerciseTitle = exerciseTitle;
         this.exerciseQuantity = exerciseQuantity;
         this.exerciseDescription = exerciseDescription;
-//        this.exerciseTimestamp = new Date(),toString();
+        this.exerciseTimestamp = new Date().toString();
     }
 
     public long getExerciseId() { return exerciseId; }

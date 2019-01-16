@@ -32,6 +32,9 @@ This activity increments an integer by 1 for each time the button is clicked
 1/15/2019
 - Added exercise journal database and activity
 
+1/16/2019
+- RecyclerViews
+
 ## Activity Screenshots
 - Finger Exerciser(./screenshots/Screenshot_FingerExerciser.png)
 
@@ -40,6 +43,8 @@ This activity increments an integer by 1 for each time the button is clicked
 - Image Carousel(./screenshots/Screenshot_MainActivity.png)
 
 - Notifications(./screenshots/Screenshot_Notifications.png)
+
+- RecyclerView
 
 ## Resources
 
@@ -61,6 +66,6 @@ This activity increments an integer by 1 for each time the button is clicked
 ### Room Database
 * https://medium.freecodecamp.org/room-sqlite-beginner-tutorial-2e725e47bfab
 
-### ListViews
+### RecyclerView
 * http://www.vogella.com/tutorials/AndroidRecyclerView/article.html
-
+* Jessica Lovell, Evan Slaton, Zahra Mohammed
