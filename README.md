@@ -35,6 +35,9 @@ Health Tracker performs the following activities:
 1/15/2019
 - Added exercise journal database and activity
 
+1/16/2019
+- RecyclerViews
+
 ## Activity Screenshots
 ### Finger Exerciser
 ![Finger Exerciser](./screenshots/Screenshot_FingerExcerciser.png)
@@ -47,6 +50,8 @@ Health Tracker performs the following activities:
 
 ### Notifications
 ![Notifications](./screenshots/Screenshot_Notifications.png)
+
+- RecyclerView
 
 ## Resources
 
@@ -68,6 +73,6 @@ Health Tracker performs the following activities:
 ### Room Database
 * https://medium.freecodecamp.org/room-sqlite-beginner-tutorial-2e725e47bfab
 
-### ListViews
+### RecyclerView
 * http://www.vogella.com/tutorials/AndroidRecyclerView/article.html
-
+* Jessica Lovell, Evan Slaton, Zahra Mohammed
