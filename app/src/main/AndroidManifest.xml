@@ -20,8 +20,7 @@
         <activity android:name=".FingerExercise" />
         <activity android:name=".Stopwatch" />
 
-        <receiver
-            android:name=".NotificationReceiver"
+        <receiver android:name=".Notifications"
             android:enabled="true"
             android:exported="true" />
     </application>
