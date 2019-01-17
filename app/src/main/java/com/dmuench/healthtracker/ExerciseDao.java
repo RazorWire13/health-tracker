@@ -1,31 +1,32 @@
 package com.dmuench.healthtracker;
 
-import android.arch.persistence.room.Dao;
-import android.arch.persistence.room.Delete;
-import android.arch.persistence.room.Insert;
-import android.arch.persistence.room.Query;
-import android.arch.persistence.room.Update;
+import androidx.room.Dao;
+import androidx.room.Delete;
+import androidx.room.Insert;
+import androidx.room.Query;
+import androidx.room.Update;
 
 import java.util.List;
 
 @Dao
 public interface ExerciseDao {
 
-    @Insert
-    void insertOneExercise (Exercises exercises);
+    @Query("SELECT * FROM Exercise WHERE id = :id")
+    Exercise getExercise (long id);
+
+    @Query("SELECT * FROM Exercise")
+    List<Exercise> getAll();
+
+    //Resourced from: https://stackoverflow.com/questions/5191503/how-to-select-the-last-record-of-a-table-in-sql
+    @Query("SELECT * FROM exercise ORDER BY id DESC LIMIT 1 ")
+    Exercise getLast();
 
     @Insert
-    void insertMultipleExercises (List<Exercises> exerciseList);
-
-    @Query("SELECT * FROM exercises WHERE exerciseId = :exerciseId")
-    Exercises getExercise (long exerciseId);
-
-    @Query("SELECT * FROM exercises")
-    List<Exercises> getAll();
+    void addExercise (Exercise exercise);
 
     @Update
-    void updateExercises (Exercises exercises);
+    void updateExercise (Exercise exercise);
 
     @Delete
-    void deleteExercise (Exercises exercises);
+    void deleteExercise (Exercise exercise);
 }

@@ -2,7 +2,7 @@ package com.dmuench.healthtracker;
 
 import java.util.List;
 
-import android.support.v7.widget.RecyclerView;
+import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,37 +10,39 @@ import android.widget.TextView;
 
 // Code resourced from: http://www.vogella.com/tutorials/AndroidRecyclerView/article.html
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
-    private List<Exercises> exercises;
+    private List<Exercise> values;
 
     // Provide a reference to the views for each data item
     // Complex data items may need more than one view per item, and you provide access to all the views for a data item in a view holder
     public static class ViewHolder extends RecyclerView.ViewHolder {
         // each data item is a string
         public View layout;
-        public TextView exerciseTitle;
-        public TextView exerciseDescription;
+        public TextView txtHeader;
+        public TextView txtFooter;
+        public TextView txtDate;
 
         public ViewHolder(View v) {
             super(v);
             layout = v;
-            exerciseTitle = (TextView) v.findViewById(R.id.firstLine);
-            exerciseDescription = (TextView) v.findViewById(R.id.secondLine);
+            txtHeader = (TextView) v.findViewById(R.id.firstLine);
+            txtFooter = (TextView) v.findViewById(R.id.secondLine);
+            txtDate = (TextView) v.findViewById(R.id.timeText);
         }
     }
 
-//    public void add(int position, String item) {
-//        exercises.add(position, item);
-//        notifyItemInserted(position);
-//    }
-//
-//    public void remove(int position) {
-//        exercises.remove(position);
-//        notifyItemRemoved(position);
-//    }
+    public void add(int position, Exercise exercise) {
+        values.add(position, exercise);
+        notifyItemInserted(position);
+    }
+
+    public void remove(int position) {
+        values.remove(position);
+        notifyItemRemoved(position);
+    }
 
     // Provide a suitable constructor (depends on the kind of dataset)
-    public MyAdapter(List<Exercises> myDataset) {
-        exercises = myDataset;
+    public MyAdapter(List<Exercise> myDataset) {
+        values = myDataset;
     }
 
     // Create new views (invoked by the layout manager)
@@ -59,14 +61,16 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     public void onBindViewHolder(ViewHolder holder, final int position) {
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
+        final Exercise exercise = values.get(position);
+        holder.txtHeader.setText(exercise.title + ", " + exercise.quantity );
+        holder.txtFooter.setText("Description: " + exercise.description);
+        holder.txtDate.setText(exercise.timestamp);
 
-        holder.exerciseTitle.setText(exercises.get(position).getExerciseTitle());
-        holder.exerciseDescription.setText(exercises.get(position).getExerciseDescription());
     }
 
     // Return the size of your dataset (invoked by the layout manager)
     @Override
     public int getItemCount() {
-        return exercises.size();
+        return values.size();
     }
 }
