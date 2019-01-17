@@ -1,17 +1,18 @@
-# health-tracker
+# Health Tracker
 Health Tracker (Android Mobile)
 
 Health Tracker performs the following activities:
-
-'Image Carousel'
+`Image Carousel`
 This activity shifts from a set of images on the home activity
 
-'Stopwatch'
+`Stopwatch`
 This activity can start/stop and reset a stopwatch to the millisecond
 
-'Finger Exerciser'
+`Finger Exerciser`
 This activity increments an integer by 1 for each time the button is clicked
 
+`Excercise Journal`
+This activity provides users a database to store journal entries of their workouts as they complete them
 
 ## Change Log
 1/8/2019
@@ -33,21 +34,16 @@ This activity increments an integer by 1 for each time the button is clicked
 - Added exercise journal database and activity
 
 1/16/2019
-- RecyclerViews
+- RecyclerView added, database working.
 
 ## Activity Screenshots
 - Finger Exerciser(./screenshots/Screenshot_FingerExerciser.png)
-
 - Stopwatch(./screenshots/Screenshot_Stopwatch.png)
-
 - Image Carousel(./screenshots/Screenshot_MainActivity.png)
-
 - Notifications(./screenshots/Screenshot_Notifications.png)
-
-- RecyclerView
+- RecyclerView(./screenshots/Screenshot_ExerciseJournal.png)
 
 ## Resources
-
 ### Finger Exerciser
 * https://www.viralandroid.com/2015/10/how-to-increase-integer-value-when-button-is-clicked.html
 
@@ -68,4 +64,4 @@ This activity increments an integer by 1 for each time the button is clicked
 
 ### RecyclerView
 * http://www.vogella.com/tutorials/AndroidRecyclerView/article.html
-* Jessica Lovell, Evan Slaton, Zahra Mohammed
+* Jessica Lovell, Evan Slaton, Zahra Mohamed helped with code snippets and layout help for journal
