@@ -1,4 +1,4 @@
-# health-tracker
+# Health Tracker
 Health Tracker (Android Mobile)
 
 Health Tracker performs the following activities:
@@ -15,6 +15,8 @@ Health Tracker performs the following activities:
 `Notifications`
 * Sends a notification to the user to take a water break when the button is clicked
 
+`Excercise Journal`
+This activity provides users a database to store journal entries of their workouts as they complete them
 
 ## Change Log
 1/8/2019
@@ -36,9 +38,10 @@ Health Tracker performs the following activities:
 - Added exercise journal database and activity
 
 1/16/2019
-- RecyclerViews
+- RecyclerView added, database working.
 
 ## Activity Screenshots
+
 ### Finger Exerciser
 ![Finger Exerciser](./screenshots/Screenshot_FingerExcerciser.png)
 
@@ -51,10 +54,10 @@ Health Tracker performs the following activities:
 ### Notifications
 ![Notifications](./screenshots/Screenshot_Notifications.png)
 
-- RecyclerView
+### Journal
+![Journal](./screenshots/Screenshot_ExerciseJournal.png)
 
 ## Resources
-
 ### Finger Exerciser
 * https://www.viralandroid.com/2015/10/how-to-increase-integer-value-when-button-is-clicked.html
 
@@ -75,4 +78,4 @@ Health Tracker performs the following activities:
 
 ### RecyclerView
 * http://www.vogella.com/tutorials/AndroidRecyclerView/article.html
-* Jessica Lovell, Evan Slaton, Zahra Mohammed
+* Jessica Lovell, Evan Slaton, Zahra Mohamed helped with code snippets and layout help for journal
