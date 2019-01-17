@@ -2,14 +2,18 @@
 Health Tracker (Android Mobile)
 
 Health Tracker performs the following activities:
+
 `Image Carousel`
-This activity shifts from a set of images on the home activity
+* This activity shifts from a set of images on the home activity
 
 `Stopwatch`
-This activity can start/stop and reset a stopwatch to the millisecond
+* This activity can start/stop and reset a stopwatch to the millisecond
 
 `Finger Exerciser`
-This activity increments an integer by 1 for each time the button is clicked
+* This activity increments an integer by 1 for each time the button is clicked
+
+`Notifications`
+* Sends a notification to the user to take a water break when the button is clicked
 
 `Excercise Journal`
 This activity provides users a database to store journal entries of their workouts as they complete them
@@ -37,11 +41,21 @@ This activity provides users a database to store journal entries of their workou
 - RecyclerView added, database working.
 
 ## Activity Screenshots
-- Finger Exerciser(./screenshots/Screenshot_FingerExerciser.png)
-- Stopwatch(./screenshots/Screenshot_Stopwatch.png)
-- Image Carousel(./screenshots/Screenshot_MainActivity.png)
-- Notifications(./screenshots/Screenshot_Notifications.png)
-- RecyclerView(./screenshots/Screenshot_ExerciseJournal.png)
+
+### Finger Exerciser
+![Finger Exerciser](./screenshots/Screenshot_FingerExcerciser.png)
+
+### Stopwatch
+![Stopwatch](./screenshots/Screenshot_Stopwatch.png)
+
+### Image Carousel
+![Image Carousel](./screenshots/Screenshot_MainActivity.png)
+
+### Notifications
+![Notifications](./screenshots/Screenshot_Notifications.png)
+
+### Journal
+![Journal](./screenshots/Screenshot_ExerciseJournal.png)
 
 ## Resources
 ### Finger Exerciser
