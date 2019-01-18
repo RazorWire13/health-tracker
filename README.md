@@ -27,7 +27,7 @@ Health Tracker performs the following activities:
 * Create a new activity for Notifications. Allow users to set up reminders to drink water, which should appear every 2 hours in the notification bar. (For testing, you might want to shorten this to 15 or 30 seconds.)
  
 `Excercise Journal`
-This activity provides users a database to store journal entries of their workouts as they complete them
+* This activity provides users a database to store journal entries of their workouts as they complete them
 * Set up a database to contain Exercise data. Each Exercise should have a title, quantity, and description, as well as a timestamp. For testing, add a single Exercise to the database.
 * Add a new Activity to hold the Exercise Diary. In that view, display all entries from the Exercise database in a ListView.
 * At the top of the Exercise Diary activity, add a form that allows a user to enter data about an exercise. When they hit submit, the information about that exercise should be stored in the database and displayed in the ListView
@@ -41,8 +41,8 @@ This activity provides users a database to store journal entries of their workou
 * Create a POST route that allows creating a new Exercise, and a GET route that responds with all Exercises currently in the database. 
 * When a user opens the Exercise Journal page, the app should make a request to the server to retrieve all the Exercises in the server’s database. It should display both those Exercises and the ones that are local to the device within the Journal page.
 * When a user creates a new Exercise locally on their device, in addition to saving it to the local database, the app should POST it to the server.
-  
 
+[Heroku backend path](https://health-tracker-web-dm.herokuapp.com/exercises)
 
 ## Change Log
 1/8/2019
@@ -75,27 +75,27 @@ This activity provides users a database to store journal entries of their workou
 ## Activity Screenshots
 ### Finger Exerciser
 <p float="left">
-  <img src="./screenshots/Screenshot_FingerExcerciser.png" width="150" />
+  <img src="./screenshots/Screenshot_FingerExerciser.png" width="100" />
 </p>
 
 ### Stopwatch
 <p float="left">
-  <img src="./screenshots/Screenshot_Stopwatch.png" width="150" />
+  <img src="./screenshots/Screenshot_Stopwatch.png" width="100" />
 </p>
 
 ### Image Carousel
 <p float="left">
-  <img src="./screenshots/Screenshot_MainActivity.png" width="150" />
+  <img src="./screenshots/Screenshot_MainActivity.png" width="100" />
 </p>
 
 ### Notifications
 <p float="left">
-  <img src="./screenshots/Screenshot_Notifications.png" width="150" />
+  <img src="./screenshots/Screenshot_Notifications.png" width="100" />
 </p>
 
 ### Journal
 <p float="left">
-  <img src="./screenshots/Screenshot_ExerciseJournal.png" width="150" />
+  <img src="./screenshots/Screenshot_ExerciseJournal.png" width="100" />
 </p>
 
 ## Resources
@@ -119,4 +119,6 @@ This activity provides users a database to store journal entries of their workou
 
 ### RecyclerView
 * http://www.vogella.com/tutorials/AndroidRecyclerView/article.html
-* Jessica Lovell, Evan Slaton, Zahra Mohamed and Jeff Borda helped with code snippets and layout help for journal and database
+
+### Helpful Human Collaboratrs
+* A special thanks to Jessica Lovell, Evan Slaton, Zahra Mohamed and Jeff Borda helped with code for project help and generally helping me keep sane

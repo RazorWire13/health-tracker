@@ -23,7 +23,7 @@
             android:id="@+id/textView6"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Exercise Journal"
+            android:text="@string/exercise_journal"
             android:textAlignment="center"
             android:textSize="24sp" />
 
@@ -32,7 +32,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="Exercise Title"
+            android:hint="@string/exercise_title"
             android:inputType="textPersonName" />
 
         <EditText
@@ -40,7 +40,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="Quantity"
+            android:hint="@string/quantity"
             android:inputType="number" />
 
         <EditText
@@ -48,7 +48,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="Description"
+            android:hint="@string/description"
             android:inputType="textMultiLine" />
 
         <Button
@@ -56,7 +56,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="addExerciseEntry"
-            android:text="Add an Entry"
+            android:text="@string/add_an_entry"
             android:layout_marginBottom="16dp"/>
 
         <androidx.recyclerview.widget.RecyclerView

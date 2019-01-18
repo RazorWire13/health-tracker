@@ -1,8 +1,13 @@
 package com.dmuench.healthtracker;
 
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.room.Room;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.Manifest;
+import android.content.pm.PackageManager;
+import android.location.Location;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.EditText;
@@ -15,6 +20,9 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.android.gms.location.FusedLocationProviderClient;
+import com.google.android.gms.location.LocationServices;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -30,6 +38,9 @@ import androidx.recyclerview.widget.RecyclerView;
 // Code resourced from: http://www.vogella.com/tutorials/AndroidRecyclerView/article.html
 public class ExerciseJournal extends AppCompatActivity {
     protected ExerciseDatabase exerciseDatabase;
+    protected final int MY_PERMISSIONS_REQUEST_ACCESS_COARSE_LOCATION = 0;
+
+    private FusedLocationProviderClient mFusedLocationClient;
 
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
@@ -42,8 +53,10 @@ public class ExerciseJournal extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_exercise_journal);
-        volleyRequest();
 
+        mFusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
+        volleyRequest();
+        getExerciseLocation();
     }
 
     public void addExerciseEntry(View v) {
@@ -56,8 +69,12 @@ public class ExerciseJournal extends AppCompatActivity {
         String descriptionEntry = description.getText().toString();
         String quantityEntry = quantity.getText().toString();
 
+        // add exercise to local database
         Exercise newExercise = new Exercise(titleEntry, quantityEntry, descriptionEntry, timestamp);
         exerciseDatabase.exerciseDao().addExercise(newExercise);
+
+        // add exercise to served database
+        saveToServerDB(titleEntry, quantityEntry, descriptionEntry);
 
         //got this from: https://stackoverflow.com/questions/3053761/reload-activity-in-android
         finish();
@@ -89,7 +106,7 @@ public class ExerciseJournal extends AppCompatActivity {
         mRecyclerView.setAdapter(mAdapter);
 
         if (exerciseDatabase.exerciseDao().getAll().isEmpty()) {
-            Exercise newExercise = new Exercise("Push-ups", "25", "Plank your body and push yourself up and down", "DTG");
+            Exercise newExercise = new Exercise("[initializer]", "[initializer]", "[initializer]", "DTG");
             exerciseDatabase.exerciseDao().addExercise(newExercise);
         }
     }
@@ -130,7 +147,7 @@ public class ExerciseJournal extends AppCompatActivity {
 
     public void saveToServerDB(final String title, final String quantity, final String description) {
         RequestQueue queue = Volley.newRequestQueue(this);
-        String url = "https://exercise-health-app.herokuapp.com/exercises";
+        String url = "https://health-tracker-web-dm.herokuapp.com/exercises";
 
         //The following is going to request a string response from the url.
         StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
@@ -154,8 +171,52 @@ public class ExerciseJournal extends AppCompatActivity {
                 return params;
             }
         };
-// Add the request to the RequestQueue.
+        // Add the request to the RequestQueue.
         queue.add(stringRequest);
+    }
+
+    public void getExerciseLocation() {
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION)
+                != PackageManager.PERMISSION_GRANTED) {
+            if (ActivityCompat.shouldShowRequestPermissionRationale(this,
+                    Manifest.permission.ACCESS_COARSE_LOCATION)) {
+            } else {
+                ActivityCompat.requestPermissions(this,
+                        new String[]{Manifest.permission.ACCESS_COARSE_LOCATION},
+                        MY_PERMISSIONS_REQUEST_ACCESS_COARSE_LOCATION);
+                // MY_PERMISSIONS_REQUEST_ACCESS_COARSE_LOCATION is an
+                // app-defined int constant. The callback method gets the
+                // result of the request.
+            }
+        } else {
+            mFusedLocationClient.getLastLocation()
+                    .addOnSuccessListener(this, new OnSuccessListener<Location>() {
+                        @Override
+                        public void onSuccess(Location location) {
+                            // Got last known location
+                            if (location != null) {
+                                // Logic to handle location object
+                            }
+                        }
+                    });
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
+        switch (requestCode) {
+            case MY_PERMISSIONS_REQUEST_ACCESS_COARSE_LOCATION: {
+                // If request is cancelled, the result arrays are empty.
+                if (grantResults.length > 0
+                        && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    // permission was granted, yay! Do the contacts-related task you need to do.
+                    Log.e("LocationAccess", "PERMISSION GRANTED");
+                } else {
+                    // permission denied, boo! Disable the functionality that depends on this permission.
+                }
+                return;
+            }
+        }
     }
 
 }
