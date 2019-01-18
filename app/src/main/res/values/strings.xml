@@ -1,4 +1,16 @@
 <resources>
     <string name="app_name">HealthTracker</string>
     <string name="finger_exercise">Finger Exercise</string>
+    <string name="exercise_title">Exercise Title</string>
+    <string name="quantity">Quantity</string>
+    <string name="description">Description</string>
+    <string name="add_an_entry">Add an Entry</string>
+    <string name="click_me">Click Me</string>
+    <string name="_0">0</string>
+    <string name="stopwatch">Stopwatch</string>
+    <string name="user_notification">User Notification</string>
+    <string name="exercise_journal">Exercise Journal</string>
+    <string name="start">[ Start ]</string>
+    <string name="_00_00_000">00:00:000</string>
+    <string name="reset">[ Reset ]</string>
 </resources>
