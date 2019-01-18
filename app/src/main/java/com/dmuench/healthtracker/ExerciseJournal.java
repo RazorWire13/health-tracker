@@ -4,6 +4,7 @@ import androidx.room.Room;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.EditText;
 import android.view.View;
 import android.widget.TextView;
@@ -19,7 +20,9 @@ import com.google.gson.reflect.TypeToken;
 
 import java.lang.reflect.Type;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -32,13 +35,15 @@ public class ExerciseJournal extends AppCompatActivity {
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
 
-    List<Exercise> exercises;
+    // Stores exercises in local and server databases
+    List<Exercise> serverDB;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_exercise_journal);
         volleyRequest();
+
     }
 
     public void addExerciseEntry(View v) {
@@ -70,12 +75,17 @@ public class ExerciseJournal extends AppCompatActivity {
                 .fallbackToDestructiveMigration()
                 .build();
 
+        // combine both servers
+        serverDB.addAll(exerciseDatabase.exerciseDao().getAll());
+
         // use a linear layout manager
         mLayoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(mLayoutManager);
 
         // define an adapter
-        mAdapter = new MyAdapter(exerciseDatabase.exerciseDao().getAll());
+        mAdapter = new MyAdapter(serverDB);
+//        mAdapter = new MyAdapter(exerciseDatabase.exerciseDao().getAll());
+
         mRecyclerView.setAdapter(mAdapter);
 
         if (exerciseDatabase.exerciseDao().getAll().isEmpty()) {
@@ -85,6 +95,7 @@ public class ExerciseJournal extends AppCompatActivity {
     }
 
 
+    // fetching things from the database
     public void volleyRequest() {
         final TextView mTextView = (TextView) findViewById(R.id.text);
 
@@ -99,8 +110,12 @@ public class ExerciseJournal extends AppCompatActivity {
                     public void onResponse(String response) {
                         // Display the first 500 characters of the response string.
                         Gson gson = new Gson();
-                        Type listType = new TypeToken<List<Exercise>>(){}.getType();
-                        exercises = gson.fromJson(response, listType);
+                        Type listType = new TypeToken<List<Exercise>>() {
+                        }.getType();
+                        List<Exercise> serverResponse = gson.fromJson(response, listType);
+                        serverDB = serverResponse;
+
+                        // displays data from both local and server databases
                         recycleRenderer();
                     }
                 }, new Response.ErrorListener() {
@@ -109,7 +124,36 @@ public class ExerciseJournal extends AppCompatActivity {
                 mTextView.setText("That didn't work!");
             }
         });
+// Add the request to the RequestQueue.
+        queue.add(stringRequest);
+    }
 
+    public void saveToServerDB(final String title, final String quantity, final String description) {
+        RequestQueue queue = Volley.newRequestQueue(this);
+        String url = "https://exercise-health-app.herokuapp.com/exercises";
+
+        //The following is going to request a string response from the url.
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        Log.i("Journal.getServer", "added to server db");
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Log.e("Journal.getServer", error.toString());
+            }
+        }) {
+            protected Map<String, String> getParams() {
+                Map<String, String> params = new HashMap<String, String>();
+                params.put("title", title);
+                params.put("quantity", quantity);
+                params.put("description", description);
+
+                return params;
+            }
+        };
 // Add the request to the RequestQueue.
         queue.add(stringRequest);
     }
