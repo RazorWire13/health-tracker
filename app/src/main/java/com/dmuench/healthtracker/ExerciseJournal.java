@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.Manifest;
 import android.content.pm.PackageManager;
+import android.location.Geocoder;
 import android.location.Location;
 import android.os.Bundle;
 import android.util.Log;
@@ -196,6 +197,7 @@ public class ExerciseJournal extends AppCompatActivity {
                             // Got last known location
                             if (location != null) {
                                 // Logic to handle location object
+                                // put in the GEOCODER CODE HERE
                             }
                         }
                     });
