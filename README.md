@@ -42,6 +42,25 @@ Health Tracker performs the following activities:
 * When a user opens the Exercise Journal page, the app should make a request to the server to retrieve all the Exercises in the server’s database. It should display both those Exercises and the ones that are local to the device within the Journal page.
 * When a user creates a new Exercise locally on their device, in addition to saving it to the local database, the app should POST it to the server.
 
+`strings.xml`
+* Remove all hardcoded strings from your UI, and instead use the strings.xml file.
+
+`Location`
+* When a user adds an exercise, they should be able to include their current location.
+* Update your models appropriately, and display the location within the ListView.
+
+`SharedPrefs`
+* Ensure that the user’s username is correctly displayed throughout the app.
+* Also, modify the homepage to include some key stats, such as the current finger exercise count and the total number of times the user has visited the homepage.
+
+`Auth on the backend`
+* Add auth to your Spring backend, so that users can log in.
+* Require users to be logged in to post an Exercise, and associate users and exercises.
+
+`SharedPrefs for login`
+* Allow the user to log in to your app, using the login functionality for the backend.
+* Store their token in SharedPrefs, and ensure it’s secret.
+
 [Heroku backend path](https://health-tracker-web-dm.herokuapp.com/exercises)
 
 ## Change Log
@@ -71,6 +90,9 @@ Health Tracker performs the following activities:
 
 1/18/2019
 - Completed local and server database linkages and rendering on mobile app
+
+1/22/2019
+- Read up on security. No code committed.
 
 ## Activity Screenshots
 ### Finger Exerciser
@@ -121,4 +143,5 @@ Health Tracker performs the following activities:
 * http://www.vogella.com/tutorials/AndroidRecyclerView/article.html
 
 ### Helpful Human Collaboratrs
-* A special thanks to Jessica Lovell, Evan Slaton, Zahra Mohamed and Jeff Borda helped with code for project help and generally helping me keep sane
+* A heartfelt thanks to Jessica Lovell, Evan Slaton, Zahra Mohamed and Jeff Borda helped with code for project help and generally helping me keep sane
+* Special thanks to Sooz for being my ever-forgiving TA and demanding excellence in READMEs!
