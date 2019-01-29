@@ -142,6 +142,6 @@ Health Tracker performs the following activities:
 ### RecyclerView
 * http://www.vogella.com/tutorials/AndroidRecyclerView/article.html
 
-### Helpful Human Collaboratrs
+### Helpful Human Collaborators
 * A heartfelt thanks to Jessica Lovell, Evan Slaton, Zahra Mohamed and Jeff Borda helped with code for project help and generally helping me keep sane
 * Special thanks to Sooz for being my ever-forgiving TA and demanding excellence in READMEs!
